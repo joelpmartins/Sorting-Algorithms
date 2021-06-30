@@ -4,9 +4,6 @@ BUBBLE SORT, COMB SORT, MERGE SORT, HEAP SORT, SHELL SORT, TIM SORT E QUICK SORT
 
 AUTORES: JOEL, CRISTOFERSON E MAURICIO.
 
-IDE: CODE::BLOCKS 20.03.
-COMPILADOR: GCC 9.3.0.
-
 ÚLTIMA ATUALIZAÇÃO: 29/06/2021.
 *******************************************************************************************/
 
