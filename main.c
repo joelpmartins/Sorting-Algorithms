@@ -211,19 +211,19 @@ void gerar_resultado(int vetor[], int tamanho, int n, int tipo){
                 }
                 case 9:{
                     inicio=clock();
-                    timSort(vetor, tamanho); // 1024/2048/4096/8192/16384/32768...
+                    timSort(vetor, tamanho);
                     fim=clock();
                     descricao="Tim Sort";
                     break;
                 }
                 case 10:{
-					inicio=clock();
+		    inicio=clock();
                     quickSort(vetor, 0, tamanho-1);
                     fim=clock();
                     descricao="Quick Sort";
                     i=n+1;
-					break;
-				}
+		    break;
+		}
             }
             resultado[j]=calcular_tempo(inicio, fim);
         }
