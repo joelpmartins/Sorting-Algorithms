@@ -4,7 +4,7 @@ BUBBLE SORT, COMB SORT, MERGE SORT, HEAP SORT, SHELL SORT, TIM SORT E QUICK SORT
 
 AUTORES: JOEL, CRISTOFERSON E MAURICIO.
 
-ÚLTIMA ATUALIZAÇÃO: 29/06/2021.
+ÚLTIMA ATUALIZAÇÃO: 30/06/2021.
 *******************************************************************************************/
 
 #include <locale.h>
@@ -86,19 +86,19 @@ int tipo_lista(){
 void gerar_lista(int vetor[], int tamanho, int tipo){
 	int i=0, temp=0;
 	switch(tipo){
-		case 1:{ // gera lista de números em ordem crescente
+		case 1:{
 			for(i=0; i<tamanho; i++){
 				vetor[i]=i;
 			}
 			break;
 		}
-		case 2:{ // gera lista de números em ordem decrescente
+		case 2:{
 			for(i=tamanho-1; i>-1; i--){
                 vetor[i]=temp++;
             }
 			break;
 		}
-		case 3:{ // gera lista de números aleatórios
+		case 3:{
 			for(i=0; i<tamanho; i++){
 				vetor[i]=rand()%tamanho;
 			}
@@ -109,14 +109,14 @@ void gerar_lista(int vetor[], int tamanho, int tipo){
 
 double calcular_tempo(double inicio, double fim){
 	double tempo;
-	tempo=(double)(fim-inicio)/CLOCKS_PER_SEC; // realiza o cálculo do tempo de execução em segundos
+	tempo=(double)(fim-inicio)/CLOCKS_PER_SEC;
 	return tempo;
 }
 
 double calcular_media(double resultado[], int tamanho){
     double m, media=0, temp;
     int c=0, i, j, n1, n2;
-    for(i=1; i<tamanho; i++){ // ordenação da lista de resultados usando o método Insertion Sort
+    for(i=1; i<tamanho; i++){
         temp=resultado[i];
         j=i-1;
         while(j>-1 && resultado[j]>temp){
@@ -125,16 +125,16 @@ double calcular_media(double resultado[], int tamanho){
         }
         resultado[j+1]=temp;
     }
-    n1=tamanho/2-tamanho/4; // n1 será atribuído o valor do elemento do meio da primeira metade do vetor resultado
-    n2=tamanho/2+tamanho/4; // n2 será atribuído o valor do elemento do meio da segunda metade do vetor resultado
-    m=(resultado[n2]-resultado[n1])*0.25+(resultado[n2]-resultado[n1]); // m será atribuído o valor do que seria uma espécie de margem de erro
+    n1=tamanho/2-tamanho/4;
+    n2=tamanho/2+tamanho/4;
+    m=(resultado[n2]-resultado[n1])*0.25+(resultado[n2]-resultado[n1]);
     for(i=0; i<tamanho; i++){
-        if((resultado[n1]-m)<=resultado[i] && (resultado[n2]+m)>=resultado[i]){ // com o valor de m será verificado se o resultado analisado é um valor fora da curva, ou seja, muito maior ou menor que os outros resultados
-            media=resultado[i]+media; // soma dos resultados que estão dentro do padrão
-            c++; // quantidade de resultados dentro do padrão
+        if((resultado[n1]-m)<=resultado[i] && (resultado[n2]+m)>=resultado[i]){
+            media=resultado[i]+media;
+            c++;
         }
     }
-    media=media/c; // divisão da soma dos resultados pela quantidade de resultados dentro do padrão para gerar a média
+    media=media/c;
     return media;
 }
 
