@@ -128,16 +128,16 @@ double calcular_media(double resultado[], int tamanho){
         }
         resultado[j+1]=temp;
     }
-    n1=tamanho/2-tamanho/4; // n1 será atribuido o valor do elemento do meio da primeira metade do vetor resultado
-    n2=tamanho/2+tamanho/4; // n2 será atribuido o valor do elemento do meio da segunda metade do vetor resultado
-    m=(resultado[n2]-resultado[n1])*0.25+(resultado[n2]-resultado[n1]); // m será atribuido o valor do que seria uma espécie de margem de erro
+    n1=tamanho/2-tamanho/4; // n1 será atribuído o valor do elemento do meio da primeira metade do vetor resultado
+    n2=tamanho/2+tamanho/4; // n2 será atribuído o valor do elemento do meio da segunda metade do vetor resultado
+    m=(resultado[n2]-resultado[n1])*0.25+(resultado[n2]-resultado[n1]); // m será atribuído o valor do que seria uma espécie de margem de erro
     for(i=0; i<tamanho; i++){
         if((resultado[n1]-m)<=resultado[i] && (resultado[n2]+m)>=resultado[i]){ // com o valor de m será verificado se o resultado analisado é um valor fora da curva, ou seja, muito maior ou menor que os outros resultados
             media=resultado[i]+media; // soma dos resultados que estão dentro do padrão
             c++; // quantidade de resultados dentro do padrão
         }
     }
-    media=media/c; // divisão da soma dos resultados pela quantidade de resultados dentro do padrão para gerar a media
+    media=media/c; // divisão da soma dos resultados pela quantidade de resultados dentro do padrão para gerar a média
     return media;
 }
 
